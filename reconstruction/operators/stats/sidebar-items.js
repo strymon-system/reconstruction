@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["CountNumFragmentsPerSessionPerEpoch","Counts the number of fragmented sessions observed after each epoch."],["Histogram","Computes a histogram of the values observed per epoch."],["SumPerEpoch","Emits total value (cumulative sum) of a numerical stream once per epoch."],["TopK","Calculates the top K most frequent bins per epoch."]]});

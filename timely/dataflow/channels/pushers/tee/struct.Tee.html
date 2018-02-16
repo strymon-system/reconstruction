@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Tee` struct in crate `timely`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Tee">
+
+    <title>timely::dataflow::channels::pushers::tee::Tee - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Struct Tee</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.new">new</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Push%3C(T%2C%20Content%3CD%3E)%3E">Push&lt;(T, Content&lt;D&gt;)&gt;</a><a href="#impl-Clone">Clone</a></div></div><p class='location'><a href='../../../../index.html'>timely</a>::<wbr><a href='../../../index.html'>dataflow</a>::<wbr><a href='../../index.html'>channels</a>::<wbr><a href='../index.html'>pushers</a>::<wbr><a href='index.html'>tee</a></p><script>window.sidebarCurrent = {name: 'Tee', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../../../index.html'>timely</a>::<wbr><a href='../../../index.html'>dataflow</a>::<wbr><a href='../../index.html'>channels</a>::<wbr><a href='../index.html'>pushers</a>::<wbr><a href='index.html'>tee</a>::<wbr><a class="struct" href=''>Tee</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../../../src/timely/dataflow/channels/pushers/tee.rs.html#12-15' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Tee&lt;T:&nbsp;'static, D:&nbsp;'static&gt; { /* fields omitted */ }</pre><div class='docblock'><p>Wraps a shared list of <code>Box&lt;Push&gt;</code> to forward pushes to. Owned by <code>Stream</code>.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;T, D&gt; <a class="struct" href="../../../../../timely/dataflow/channels/pushers/tee/struct.Tee.html" title="struct timely::dataflow::channels::pushers::tee::Tee">Tee</a>&lt;T, D&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../../src/timely/dataflow/channels/pushers/tee.rs.html#41-52' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>() -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="struct" href="../../../../../timely/dataflow/channels/pushers/tee/struct.Tee.html" title="struct timely::dataflow::channels::pushers::tee::Tee">Tee</a>&lt;T, D&gt;, <a class="struct" href="../../../../../timely/dataflow/channels/pushers/tee/struct.TeeHelper.html" title="struct timely::dataflow::channels::pushers::tee::TeeHelper">TeeHelper</a>&lt;T, D&gt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../../src/timely/dataflow/channels/pushers/tee.rs.html#43-51' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Allocates a new pair of <code>Tee</code> and <code>TeeHelper</code>.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Push%3C(T%2C%20Content%3CD%3E)%3E' class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> + 'static, D:&nbsp;<a class="trait" href="../../../../../abomonation/trait.Abomonation.html" title="trait abomonation::Abomonation">Abomonation</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> + 'static&gt; <a class="trait" href="../../../../../timely/trait.Push.html" title="trait timely::Push">Push</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a>T, <a class="enum" href="../../../../../timely/dataflow/channels/message/enum.Content.html" title="enum timely::dataflow::channels::message::Content">Content</a>&lt;D&gt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>&gt; for <a class="struct" href="../../../../../timely/dataflow/channels/pushers/tee/struct.Tee.html" title="struct timely::dataflow::channels::pushers::tee::Tee">Tee</a>&lt;T, D&gt;</code><a href='#impl-Push%3C(T%2C%20Content%3CD%3E)%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../../src/timely/dataflow/channels/pushers/tee.rs.html#17-39' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.push' class="method"><span id='push.v' class='invisible'><code>fn <a href='../../../../../timely/trait.Push.html#tymethod.push' class='fnname'>push</a>(&amp;mut self, message: &amp;mut <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a>T, <a class="enum" href="../../../../../timely/dataflow/channels/message/enum.Content.html" title="enum timely::dataflow::channels::message::Content">Content</a>&lt;D&gt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>&gt;)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../../src/timely/dataflow/channels/pushers/tee.rs.html#19-38' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Pushes <code>element</code> and provides the opportunity to take ownership. <a href="../../../../../timely/trait.Push.html#tymethod.push">Read more</a></p>
+</div><h4 id='method.send' class="method"><span id='send.v' class='invisible'><code>fn <a href='../../../../../timely/trait.Push.html#method.send' class='fnname'>send</a>(&amp;mut self, element: T)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../../src/timely_communication/lib.rs.html#131' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Pushes <code>element</code> and drops any resulting resources.</p>
+</div><h4 id='method.done' class="method"><span id='done.v' class='invisible'><code>fn <a href='../../../../../timely/trait.Push.html#method.done' class='fnname'>done</a>(&amp;mut self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../../src/timely_communication/lib.rs.html#134' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Pushes <code>None</code>, conventionally signalling a flush.</p>
+</div></div><h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl&lt;T, D&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../../../../timely/dataflow/channels/pushers/tee/struct.Tee.html" title="struct timely::dataflow::channels::pushers::tee::Tee">Tee</a>&lt;T, D&gt;</code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../../src/timely/dataflow/channels/pushers/tee.rs.html#54-61' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../../../../timely/dataflow/channels/pushers/tee/struct.Tee.html" title="struct timely::dataflow::channels::pushers::tee::Tee">Tee</a>&lt;T, D&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../../src/timely/dataflow/channels/pushers/tee.rs.html#55-60' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../../../";
+        window.currentCrate = "timely";
+    </script>
+    <script src="../../../../../main.js"></script>
+    <script defer src="../../../../../search-index.js"></script>
+</body>
+</html>

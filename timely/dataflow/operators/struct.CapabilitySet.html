@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `CapabilitySet` struct in crate `timely`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, CapabilitySet">
+
+    <title>timely::dataflow::operators::CapabilitySet - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Struct CapabilitySet</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.new">new</a><a href="#method.insert">insert</a><a href="#method.delayed">delayed</a><a href="#method.downgrade">downgrade</a></div></div><p class='location'><a href='../../index.html'>timely</a>::<wbr><a href='../index.html'>dataflow</a>::<wbr><a href='index.html'>operators</a></p><script>window.sidebarCurrent = {name: 'CapabilitySet', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>timely</a>::<wbr><a href='../index.html'>dataflow</a>::<wbr><a href='index.html'>operators</a>::<wbr><a class="struct" href=''>CapabilitySet</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/timely/dataflow/operators/capability.rs.html#139-141' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct CapabilitySet&lt;T:&nbsp;<a class="trait" href="../../../timely/progress/timestamp/trait.Timestamp.html" title="trait timely::progress::timestamp::Timestamp">Timestamp</a>&gt; { /* fields omitted */ }</pre><div class='docblock'><p>A set of capabilities, for possibly incomparable times.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="../../../timely/progress/timestamp/trait.Timestamp.html" title="trait timely::progress::timestamp::Timestamp">Timestamp</a>&gt; <a class="struct" href="../../../timely/dataflow/operators/struct.CapabilitySet.html" title="struct timely::dataflow::operators::CapabilitySet">CapabilitySet</a>&lt;T&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/timely/dataflow/operators/capability.rs.html#143-176' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>() -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/timely/dataflow/operators/capability.rs.html#146-148' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Allocates an empty capability set.</p>
+</div><h4 id='method.insert' class="method"><span id='insert.v' class='invisible'><code>pub fn <a href='#method.insert' class='fnname'>insert</a>(&amp;mut self, capability: <a class="struct" href="../../../timely/dataflow/operators/struct.Capability.html" title="struct timely::dataflow::operators::Capability">Capability</a>&lt;T&gt;)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/timely/dataflow/operators/capability.rs.html#151-156' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Inserts <code>capability</code> into the set, discarding redundant capabilities.</p>
+</div><h4 id='method.delayed' class="method"><span id='delayed.v' class='invisible'><code>pub fn <a href='#method.delayed' class='fnname'>delayed</a>(&amp;self, time: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>T) -&gt; <a class="struct" href="../../../timely/dataflow/operators/struct.Capability.html" title="struct timely::dataflow::operators::Capability">Capability</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/timely/dataflow/operators/capability.rs.html#161-163' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Creates a new capability to send data at <code>time</code>.</p>
+
+<p>This method panics if there does not exist a capability in <code>self.elements</code> less or equal to <code>time</code>.</p>
+</div><h4 id='method.downgrade' class="method"><span id='downgrade.v' class='invisible'><code>pub fn <a href='#method.downgrade' class='fnname'>downgrade</a>(&amp;mut self, frontier: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[T]</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/timely/dataflow/operators/capability.rs.html#168-175' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Downgrades the set of capabilities to correspond with the times in <code>frontier</code>.</p>
+
+<p>This method panics if any element of <code>frontier</code> is not greater or equal to some element of <code>self.elements</code>.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "timely";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>
